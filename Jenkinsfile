@@ -7,9 +7,9 @@ pipeline
 }
 
     stages {
-        stage('Git_clone') { steps { bat 'git clone https://github.com/utkarshgupta611/JenkinsTerraformBuild.git' } }
+        // stage('Git_clone') { steps { bat 'git clone https://github.com/utkarshgupta611/JenkinsTerraformBuild.git' } }
 
-        stage('Maven_Build') { steps { bat 'mvn build' } }
+        stage('Maven_Build') { steps { bat 'mvn clean package' } }
 
         stage('Maven_Test') { steps { bat 'mvn test' } }
 
