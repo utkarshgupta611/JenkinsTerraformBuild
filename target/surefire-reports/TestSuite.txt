@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.566 s <<< FAILURE! - in TestSuite
+mavenforjenkins.UITest.startBrowser  Time elapsed: 0.472 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Parameter 'Browser' is required by @Test on method startBrowser but has not been marked @Optional or defined
+in U:\GIT\GitHub\JenkinsLearning\mavenjenkins\testng.xml
+

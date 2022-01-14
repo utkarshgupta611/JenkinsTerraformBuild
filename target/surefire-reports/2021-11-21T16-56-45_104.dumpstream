@@ -1,0 +1,4 @@
+# Created at 2021-11-21T16:56:52.328
+Boot Manifest-JAR contains absolute paths in classpath 'U:\GIT\GitHub\JenkinsLearning\mavenjenkins\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+
