@@ -1,41 +1,32 @@
 pipeline 
 {
     agent any
+    tools {
+  maven 'MAVEN_HOME'
+  terraform 'terraform-1'
+}
 
-    stages 
-    {
-        stage('Build') 
-        {
-            steps 
-            {
-                echo 'Build App'
-            }
-        }
+    stages {
+        stage('Git_clone') { steps { bat 'git clone https://github.com/utkarshgupta611/JenkinsTerraformBuild.git' } }
 
-        stage('Test') 
-        {
-            steps 
-            {
-                echo 'Test App'
-            }
-        }
+        stage('Maven_Build') { steps { bat 'mvn build' } }
 
-        stage('Deploy') 
-        {
-            steps 
-            {
-                echo 'Deploy App'
-            }
-        }
+        stage('Maven_Test') { steps { bat 'mvn test' } }
+
+        stage('terraform_init') { steps { bat 'terraform init' } }
+
+        stage('terraform_plan') { steps { bat 'terraform plan' } }
+
+        stage('terraform_apply') { steps { bat 'terraform apply --auto-approve' } }
     }
 
-    post
-    {
+    // post
+    // {
 
-    	always
-    	{
-    		emailext body: 'Summary', subject: 'Pipeline Status', to: 'selenium3bymukesh@gmail.com'
-    	}
+    // 	always
+    // 	{
+    // 		emailext body: 'Summary', subject: 'Pipeline Status', to: 'selenium3bymukesh@gmail.com'
+    // 	}
 
-    }
+    // }
 }
