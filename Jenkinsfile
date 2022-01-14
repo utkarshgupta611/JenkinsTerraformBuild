@@ -27,11 +27,11 @@ pipeline
                 } 
         }
 
-        stage('terraform_plan') {
-             steps {
-                bat 'terraform plan' 
-                } 
-        }
+        // stage('terraform_plan') {
+        //      steps {
+        //         bat 'terraform plan' 
+        //         } 
+        // }
 
         stage('terraform_apply') {
             steps { 
