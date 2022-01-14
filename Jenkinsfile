@@ -33,7 +33,11 @@ pipeline
                 } 
         }
 
-        stage('terraform_apply') { steps { bat 'terraform apply --auto-approve' } }
+        stage('terraform_apply') {
+            steps { 
+                bat 'terraform apply --auto-approve' 
+                } 
+        }
     }
 
     // post
